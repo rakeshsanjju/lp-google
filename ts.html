@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avis Hospitals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <!-- Preconnect so DNS/TLS is done early -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Preload the stylesheet, then apply it without blocking render -->
+<link rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      as="style">
+      
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      media="print"
+      onload="this.media='all'">
+
+<!-- Fallback for no-JS -->
+<noscript>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap">
+</noscript>
+
+  <style>
+   /* Your CSS */
+body { font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;  }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+      :root{
+  /* Adjust if your header height changes */
+  --topbar-height: 104px; /* ~80px logo + 24px vertical padding */
+}
+
+/* Top bar */
+.top-bar {
+  position: fixed;      /* make it stick */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;        /* stay above page content */
+  width: 100%;
+  background-color: #154271;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 30px;
+  box-sizing: border-box;
+}
+
+.top-bar-spacer{ height: var(--topbar-height); } /* prevents overlap */
+
+/* Existing styles (unchanged) */
+.logo-text { display:flex; align-items:center; gap:10px; }
+.logo-text img { height:80px; width:194px; }
+
+.logo-caption { color:#fff; font-size:16px; line-height:1.2; }
+.logo-caption span { display:block; font-size:12px; font-weight:300; }
+
+.call-button {
+  display:flex; align-items:center;
+  padding:6px 18px;
+  background-color:transparent;
+  border:1px solid #fff;
+  border-radius:25px;
+  color:#fff;
+  font-size:14px; font-weight:500;
+  cursor:pointer; text-decoration:none;
+  transition: background-color .3s, color .3s;
+}
+
+.call-button:hover { background:#fff; color:#154271; }
+.call-button img { height:16px; width:16px; margin-right:8px; }
+
+/* (Optional) tweak spacer on small screens if header height changes */
+@media (max-width: 480px){
+  :root{ --topbar-height: 96px; }
+}
+
+   .banner {
+      width: 100%;
+      min-height: 510px;
+      background: url('./assets/website.webp') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+
+    /* banner text */
+
+    .promo {
+      max-width: 600px;
+      margin-left: auto; /* Push to the right */
+      text-align: left;
+    }
+
+    .promo h1 {
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+
+    .promo h1 .highlight {
+      color: #FE0000;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .features li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .features li img {
+     
+      margin-right: 10px;
+      fill: #00AEEF;
+      flex-shrink: 0;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      background-color: #FE0000;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .cta-button svg {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+    .internal-features{
+      margin-left: -40px;
+    }
+    .logotick{
+      height: 10px;
+      width: 10px;
+    }
+    @media (max-width: 1024px) {
+  .banner {
+    height: 250px;
+    width:100%;
+    flex-direction: column;
+    align-items: flex-end; /* Align the promo container to the right */
+    justify-content: center;
+    padding: 30px 16px;
+    min-height: auto;
+    background-position: top center;
+    background-size: cover;
+    
+  }
+
+  .promo {
+    margin: 0;
+    max-width: 100%;
+    text-align: right; /* Align text inside to the right */
+  }
+
+  .promo h1 {
+    font-size: 12px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .features {
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+
+  .features li {
+    font-size: 10px;
+    margin-bottom: 10px;
+    justify-content: flex-end; /* Align feature items to the right */
+    text-align: right;
+  }
+  .features li img {
+    display: none; /* ✅ Hides tick icons on mobile */
+  }
+
+
+
+  .cta-button {
+    font-size: 12px;
+    padding: 10px 20px;
+    align-self: flex-end; /* Align button to the right */
+   
+  }
+
+  .internal-features {
+    margin-left: 0;
+    text-align: right;
+  }
+  .logotick{
+      display: none;
+    }
+}
+
+/* Counter Styles */
+.stats-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #4285d4;
+  padding: 20px 10px;
+  color: white;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  padding: 0 15px;
+  flex: 1;
+  min-width: 120px;
+}
+
+.stat-number {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: white;
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .stats-bar {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .stat-number {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+}
+
+/* Question Section Styles */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 boxes per row on desktop */
+  }
+}
+
+.info-box {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+.light-red {
+  background-color: #fff3f3;
+}
+
+.light-blue {
+  background-color: #eef5ff;
+}
+
+.info-box h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.info-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.info-box ul li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.info-box ul li::before {
+  position: absolute;
+  left: 0;
+  color: #00AEEF;
+  font-weight: bold;
+}
+/* .question-icon{
+  height: 12px;
+  width: 16px; 
+  margin-right: 5px;
+  padding-top: 5px;
+} */
+
+/* Appointment Styles */
+.appointment-section {
+  background-color: #143d69;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.appointment-content {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 30px;
+}
+
+.appointment-text {
+  flex: 1;
+  color: #ffffff;
+}
+
+.appointment-text p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  
+}
+
+.appointment-text h2 {
+  font-size: 24px;
+  color: #ff8c00;
+  font-weight: 700;
+}
+
+.appointment-form {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.appointment-form input {
+  padding: 12px 15px;
+  border-radius: 9999px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+ .appointment-form select {
+      padding: 12px 15px;
+      border-radius: 9999px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+.btn-blue {
+  background-color: #337ab7;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-red {
+  background-color: #ff1e1e;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Usfda Styles */
+.features-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 10px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  max-width: 150px;
+}
+
+.feature img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #000;
+}
+
+.divider {
+  width: 1px;
+  height: 60px;
+  background-color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .features-row {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+/* Doctors Styles */
+.doctor-list {
+  background-color: #eef5ff;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: 'Montserrat', sans-serif;
+  justify-content: center;
+  align-items: center; /* âœ… This centers the cards horizontally */
+}
+
+.doctor-card {
+  width: 100%;
+  max-width: 1000px; /* âœ… Controls the card's max width */
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 100px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  gap: 20px;
+}
+
+.doctor-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.doctor-info {
+  flex: 1;
+}
+
+.doctor-info h3 {
+  color: #0071ba;
+  font-size: 18px;
+  margin: 0 0 5px;
+}
+
+.doctor-info p {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn.contact {
+  background-color: #0071ba;
+  color: white;
+  margin-top: 20px;
+  width: 400px;
+}
+
+.btn.book {
+  background-color: red;
+  color: white;
+  margin-top: 20px;
+  width: 400px;
+}
+
+@media (max-width: 768px) {
+
+  .doctor-card {
+  width: 100%;
+  /* max-width:400px;  /* controls width*/
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  gap: 20px;
+}
+  .btn.contact {
+  background-color: #0071ba;
+  color: white;
+  width: 150px;
+  margin-top: -5px;
+}
+
+.btn.book {
+  background-color: red;
+  color: white;
+  width: 150px;
+  margin-top: -5px;
+}
+
+.doctor-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.doctor-card {
+  width: 95%;
+}
+}
+
+/* Vein Styles */
+
+.vein-section {
+  background-color: #fff;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.vein-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.vein-images {
+  display: flex;
+  gap: 10px;
+}
+
+.vein-img-box {
+  position: relative;
+}
+
+.vein-img-box img {
+  width: 476px;
+  height: 335px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  font-weight: bold;
+  color: white;
+  font-size: 14px;
+}
+
+.label.before {
+  background-color: #004b87;
+}
+
+.label.after {
+  background-color: #00a8cc;
+}
+
+.vein-description {
+  max-width: 600px;
+}
+
+.vein-description h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.vein-description .highlight {
+  color: red;
+}
+
+.vein-description p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* ðŸ”½ Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .vein-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vein-images {
+    flex-direction: column;
+  }
+
+  .vein-img-box img {
+    width: 370px;
+    
+   height: 200px;
+  }
+
+  .vein-description {
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .vein-description h2 {
+    font-size: 20px;
+  }
+
+  .vein-description p {
+    font-size: 14px;
+  }
+}
+
+/* Sections list */
+
+.info-section {
+  background-color: #eaf3fb;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-box {
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+  border-left: 1px solid #0072bc;
+}
+
+.info-box:first-child {
+  border-left: none;
+}
+
+.info-box h3 {
+  color: #0072bc;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.info-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.info-box ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #333;
+}
+
+
+@media (max-width: 768px) {
+  .info-container {
+    flex-direction: column;
+  }
+
+  .info-box {
+    border-left: none;
+    border-top: 1px solid #0072bc;
+  }
+
+  .info-box:first-child {
+    border-top: none;
+  }
+}
+
+/* vedio section */
+
+/* Video Section */
+.video-section {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px 20px;
+}
+
+.video-section h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.blue-text {
+  color: #0072bc;
+}
+
+.red-text {
+  color: #e60000;
+  font-weight: bold;
+}
+
+.video-card {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 90%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  height: 600px;
+}
+
+/* âœ… Make the iframe responsive */
+.video-card::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-card iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+
+/* âœ… Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .video-section h2 {
+    font-size: 26px;
+  }
+
+  .video-card {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 95%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  height: 270px;
+}
+
+/* âœ… Make the iframe responsive */
+.video-card::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-card iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 270px;
+  border: none;
+}
+
+  .video-card {
+    width: 100%;
+  }
+}
+
+/* faq styles */
+.faq-section {
+      max-width: 800px;
+      margin: 40px auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-top: -20px;
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 30px;
+    }
+
+    .blue-text {
+      color: #0072bc;
+    }
+
+    .red-text {
+      color: #e60000;
+      font-weight: bold;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #999;
+      padding: 15px 0;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-question p {
+      margin: 0;
+      font-size: 16px;
+      color: #111;
+    }
+
+    .faq-question .plus {
+      color: #e60000;
+      font-size: 24px;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      font-size: 15px;
+      color: #444;
+      padding-left: 5px;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .plus {
+      transform: rotate(45deg); /* turns + into x */
+    }
+
+
+    @media (max-width: 600px) {
+  .faq-section {
+    margin: 20px;
+    padding: 10px;
+    margin-top: -20px;
+  }
+
+  .faq-section h2 {
+    font-size: 26px;
+  }
+
+  .faq-question p {
+    font-size: 15px;
+  }
+
+  .faq-question .plus {
+    font-size: 22px;
+  }
+
+  .faq-answer {
+    font-size: 14px;
+    padding-left: 0;
+  }
+}
+
+/* contact sec  styles*/
+
+.help-section {
+      background-color: #123d6b; /* Dark blue background */
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px 40px;
+    }
+
+    .help-section h2 {
+      font-size: 24px;
+      margin-bottom: 25px;
+      margin-top: -10px;
+    }
+
+    .help-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .help-buttons a {
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-blue {
+      background-color: #4a90e2;
+    }
+
+    .btn-blue:hover {
+      background-color: #357ab8;
+    }
+
+    .btn-red {
+      background-color: #e60000;
+    }
+
+    .btn-red:hover {
+      background-color: #cc0000;
+    }
+
+    .footer-bar {
+      background-color: #143D69;
+      color: white;
+      font-size: 12px;
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 12px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .help-buttons {
+        flex-direction: column;
+      }
+
+      .footer-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+        margin-bottom: 45px;
+      }
+
+      .footer-links {
+        margin-top: 5px;
+      }
+    }
+    .comparison-section {
+  padding: 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+/* comparision section styles */
+
+.comparison-heading {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.comparison-heading .blue-text {
+  color: #0072bc;
+}
+
+.comparison-heading {
+  color: #e60000;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  max-width: 100%;
+  font-size: 14px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid #ccc;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.comparison-table thead th {
+  background-color: #0072bc;
+  color: #fff;
+}
+
+.comparison-table .highlight-row {
+  background-color: #e6f0fa;
+}
+
+.comparison-table small {
+  font-size: 12px;
+  color: #555;
+}
+
+/* sticky footer */
+.sticky-footer {
+      display: none; /* Hidden by default */
+    }
+
+    .sticky-footer button {
+      flex: 1;
+      padding: 14px 0;
+      border: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-blue {
+      background-color: #1e4bc1;
+    }
+
+    .btn-orange {
+      background-color: #ff8a00;
+    }
+
+    .content {
+      padding-bottom: 80px; /* Prevent overlap with sticky buttons */
+    }
+
+    /* Only show footer on screens â‰¤ 768px (mobile) */
+    @media (max-width: 768px) {
+      .sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    z-index: 9999;
+  }
+
+  .sticky-footer a {
+    flex: 1;
+    text-align: center;
+  }
+
+  .sticky-footer button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    color: white;
+  }
+
+  .btn-blue {
+    background-color: #3d7cc9;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .btn-orange {
+    background-color: orange;
+    border-radius: 0 5px 5px 0;
+  }
+    }
+
+
+   /*-----*/
+:root{
+  --text:#252c3e; --stroke:#b8bbd3;
+  --cta:#e31023; --ctaText:#fff;
+  --bar:#0f3b5f; --navH:64px;               /* base header height (desktop) */
+  --shadow:0 10px 30px rgba(16,59,95,.15);
+}
+
+/* Top bar */
+.top-bar{
+  position:sticky; top:0; z-index:1000;
+  display:flex; align-items:center; gap:22px;
+  height:var(--navH); padding:10px 16px;
+  background:var(--bar); color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.logo img{height:42px; width:auto; display:block;}
+
+/* NAV — row format & no dots */
+.main-nav{flex:1;}
+.main-nav ul{
+  list-style:none; margin:0; padding:0;
+  display:flex; gap:28px; align-items:center; justify-content:center;
+}
+.main-nav a{
+  text-decoration:none; color:#fff; font-weight:600; padding:8px 4px;
+}
+.main-nav a:hover,.main-nav a:focus{ opacity:.9; }
+.main-nav a.active{ border-bottom:2px solid #fff; }
+
+/* Call button */
+.call-button{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:.55rem 1rem; border-radius:999px;
+  background:#fff; color:var(--bar); text-decoration:none;
+  box-shadow:var(--shadow);
+  font-size:18px;
+}
+.call-button img{height:18px; width:auto; filter:grayscale(100%);}
+
+/* Toggle */
+.nav-toggle{
+  display:none; background:transparent; border:0; padding:6px;
+  cursor:pointer; color:#fff;
+}
+.nav-toggle .icon-close{ display:none; }
+.nav-toggle[aria-expanded="true"] .icon-menu{ display:none; }
+.nav-toggle[aria-expanded="true"] .icon-close{ display:inline; }
+
+/* ===== Mobile ===== */
+@media (max-width: 900px){
+  /* Increase header height by +50px on mobile */
+  .top-bar{
+    height: calc(var(--navH) + 20px);
+    padding: 16px; /* a little extra breathing room */
+  }
+.call-button{
+
+  font-size:10px;
+}
+  .nav-toggle{ display:inline-flex; margin-left:6px; } /* visible on mobile */
+  .call-button{ order:3; }
+  .main-nav{ order:2; }
+  .logo{ order:1; }
+  .logo img{height:42px; width:auto; display:block;}
+
+  /* Full-width dropdown panel, bounded to viewport */
+  .main-nav{
+    position: fixed;
+    inset: calc(var(--navH) + 50px) 0 0 0; /* top | right | bottom | left */
+    background: var(--bar);
+    border-bottom:1px solid rgba(255,255,255,.15);
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    height: auto;                         /* bottom:0 creates the height */
+    overflow-y: auto;                     /* scroll inside if long */
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+  }
+  .main-nav[data-open="true"]{ display:block; }
+
+  .main-nav ul{
+    flex-direction: column; gap:0; width:100%;
+    margin:0; padding:8px 0;
+  }
+  .main-nav li{ border-top:1px solid rgba(255,255,255,.12); }
+  .main-nav a{ display:block; padding:16px; }
+
+  /* Prevent sideways overflow */
+  html, body{ max-width:100%; overflow-x:hidden; }
+  body.no-scroll{ overflow:hidden; }
+}
+
+      /* Section */
+        .reviews-section {
+            background: #155e97;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* Google Rating Card */
+        .google-rating {
+            background: #fff;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 24px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .google-rating img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .google-rating span {
+            font-size: 15px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .google-rating .score {
+            font-size: 22px;
+            font-weight: 800;
+            color: #f39c12;
+        }
+
+        /* Grid */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Card */
+        .review-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 26px 20px;
+            text-align: center;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .review-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+
+        .review-card h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .review-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+        }
+
+        .review-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .review-footer img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .stars {
+            color: #f39c12;
+            font-size: 16px;
+        }
+
+
+  
+  
+  </style>
+</head>
+<body>
+
+  <!--<div class="top-bar">-->
+  <!--  <div class="logo-text">-->
+  <!--    <img src="./assets/avis-hos-logo 1.webp" alt="AVIS Hospitals Logo">-->
+     
+  <!--  </div>-->
+  <!--  <a href="tel:+919989527715" class="call-button">-->
+  <!--    <img src="./assets/Group 234.webp" alt="Call Icon">-->
+  <!--    Call Us-->
+  <!--  </a>-->
+  <!--</div>-->
+  <!-- Top Bar -->
+<!-- Top Bar -->
+<header class="top-bar">
+  <a href="/" class="logo" aria-label="AVIS Hospitals">
+   <img src="./assets/avis-hos-logo 1.webp" alt="AVIS Hospitals Logo" style="height:72px; width:auto;" />
+  </a>
+
+  <!-- Primary Navigation -->
+  <nav class="main-nav" id="siteNav" aria-label="Primary" data-open="false">
+    <ul>
+      <li><a href="#home"  aria-current="page">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#doctors">Our Doctors</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Call button -->
+  <a href="tel: +91 89297 89231" class="call-button">
+   
+     +91 89297 89231
+  </a>
+
+  <!-- Mobile menu toggle (right side) -->
+  <button class="nav-toggle" aria-controls="siteNav" aria-expanded="false" aria-label="Open menu">
+    <!-- hamburger -->
+    <svg class="icon-menu" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <!-- close -->
+    <svg class="icon-close" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+  </button>
+</header>
+
+
+  <div class="banner" id="home">
+    <div class="promo">
+      <h1>
+     
+India’s  <span class="highlight">Most Trusted Centre</span><br/>
+        for Vein & Vascular Care
+      </h1>
+  
+      <ul class="features">
+        <li class="internal-features">
+          <div class="logo tick">
+           <img  src="./assets/Group 273.webp" />
+            
+         </div>
+       Walk-in. Walk-out. Same-Day Recovery.
+        </li>
+        <li class="internal-features">
+          <div class="logo tick">
+            <img  src="./assets/Group 273.webp" />
+             
+         </div>
+         Pain-free & Scar-free Procedures.
+        </li>
+        <li class="internal-features">
+          <div class="logo tick">
+            <img  src="./assets/Group 273.webp" />
+            
+          </div>
+      Trusted by  55,000 Patients Across India.
+        </li>
+         
+        
+      </ul>
+  
+      <a href="tel: +91 89297 89231" class="cta-button">
+        <!-- phone icon -->
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.2 2.4 3 4.2 5.4 5.4l1.8-1.8c.3-.3.8-.4 1.1-.2 1.2.5 2.4.8 3.6.8.4 0 .7.3.7.7v3.6c0 .4-.3.7-.7.7C10.3 20 4 13.7 4 5.7c0-.4.3-.7.7-.7H8.3c.4 0 .7.3.7.7 0 1.2.3 2.4.8 3.6.2.4.1.8-.2 1.1l-1.8 1.8z"/></svg>
+        Call Now
+      </a>
+    </div>
+      
+
+
+  </div>
+  
+  
+ <section class="appointment-section" id="contact">
+  <div class="appointment-content">
+    <div class="appointment-text">
+      <p>Book Your Appointment</p>
+      <h2>Free Colour Doppler Screening</h2>
+    </div>
+
+    <div class="appointment-form">
+      <form
+        id="bookingForms"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSdLJX0P88Ri5LGKWvZmnziJchOzTTtLw0Upu6uP5cEPkhTvFQ/formResponse"
+        method="POST"
+        target="hiddenIframe"
+      >
+        <!-- 👇 Replace these three IDs with your actual entry IDs -->
+        <input type="text"  name="entry.587114754" placeholder="Your Name:" required />
+        <input type="tel"   name="entry.541294711" placeholder="Mobile Number:" required />
+        <select name="entry.2010786627" required>
+          <option value="" disabled selected>Select Location</option>
+          <option value="Kukatpally, Hyderabad, Telangana">Kukatpally, Hyderabad</option>
+          <option value="Jubilee Hills, Hyderabad, Telangana">Jubilee Hills, Hyderabad</option>
+          <option value="Secunderabad, Hyderabad, Telangana">Secunderabad, Hyderabad</option>
+          <option value="Kondapur, Hyderabad, Telangana">Kondapur, Hyderabad</option>
+          <option value="Khammam, Telangana">Khammam</option>
+        </select>
+
+        <!-- Hidden UTM & tracking fields (IDs should match your form) -->
+        <div class="hiddenFields">
+          <input type="hidden" name="entry.36759995"   id="utm_campaign" />
+          <input type="hidden" name="entry.925128517"  id="keyword" />
+          <input type="hidden" name="entry.1558202432" id="matchtype" />
+          <input type="hidden" name="entry.799159655"  id="creative" />
+          <input type="hidden" name="entry.1579290647" id="target" />
+          <input type="hidden" name="entry.1188518954" id="placement" />
+          <input type="hidden" name="entry.1281162109" id="utm_adgroup" />
+          <input type="hidden" name="entry.444312870"  id="utm_source" />
+          <input type="hidden" name="entry.1533084642" id="campaign_type" />
+          <input type="hidden" name="entry.1555612463" id="gclid" />
+          <input type="hidden" name="entry.1400716574" id="utm_term" />
+          <input type="hidden" name="entry.1856918845" id="utm_link" />
+          <input type="hidden" name="entry.2100436779" id="device" />
+        </div>
+
+        <button type="submit" class="btn-blue">Book Your Appointment Now</button>
+      </form>
+
+      <iframe name="hiddenIframe" id="hiddenIframe" style="display:none;"></iframe>
+    </div>
+  </div>
+</section>
+  <!-- Counter section -->
+
+  <div class="stats-bar" id="about">
+    <div class="stat-item">
+      <div class="stat-number" data-target="98">0%</div>
+      <div class="stat-label">Patient <br>Success Rate</div>
+    </div>
+    <div class="divider"></div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="4.9">0</div>
+      <div class="stat-label">Rated by Patients <br>on Google </div>
+    </div>
+    <div class="divider"></div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="55000">0</div>
+      <div class="stat-label">Happy Patients <br>Treated</div>
+    </div>
+    <div class="divider"></div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="29">0</div>
+      <div class="stat-label">Years of Vascular <br>Expertise</div>
+    </div>
+  </div>
+
+  <!-- Question Section -->
+
+  <div class="info-grid">
+       <div class="info-box light-blue">
+      <h2>Why Choose Avis Hospitals?</h2>
+      <ul>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon"  style="height: 16px; margin-right: 5px;"/>With 29+ years of vascular expertise, Avis Hospitals has become the best hospitals for varicose veins treatment. </li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Team of highly experienced vascular surgeons in Jubilee Hills and across major cities.</li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Latest laser treatment for varicose veins in Hyderabad, minimally invasive and virtually painless.
+</li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Transparent pricing and various types of insurance support.</li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Recognised by Times Network as one of India’s most trusted vein care hospitals.</li>
+      </ul>
+    </div>
+    <div class="info-box light-red">
+      <h2>Risks of Ignoring Vein Problems</h2>
+      <ul>
+        
+        <li style="font-size: 20px; margin-left: -25px; "><img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;" />Painful leg ulcers that take time to heal.</li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Severe cases can lead to tissue damage or amputation.</li>
+        <li style="font-size: 20px; margin-left: -25px; "> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Persistent skin darkening and swelling around the ankles. </li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>In advanced conditions, neglected veins may progress to deep vein thrombosis or even gangrene.</li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Early diagnosis and timely treatment can prevent these complications.</li>
+      </ul>
+    </div>
+    <div class="info-box light-blue">
+      <h2>Common Causes of Varicose Veins</h2>
+      <ul>
+
+
+
+
+        <li style="font-size: 20px; margin-left: -25px; "> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Family history or genetic weakness in vein walls and valves.</li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Standing or sitting for prolonged hours, reducing blood circulation in the legs.</li>
+        <li style="font-size: 20px; margin-left: -25px; "> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Pregnancy-related hormonal and pressure changes that strain leg veins.</li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/> Obesity and lack of regular physical activity increasing venous pressure.</li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/> Hormonal changes or aging that weaken vein elasticity and valve function.</li>
+      </ul>
+    </div>
+    <div class="info-box light-red">
+      <h2>Insurance Made Easy For You</h2>
+      <ul>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Accepted and trusted by all leading insurance partners across India.
+</li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>100% transparent and patient-friendly pricing - no hidden costs, ever.</li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Dedicated assistance throughout documentation and claim processing.</li>
+        <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/>Quick and seamless 30-minute cashless procedure for eligible insurance plans.</li>
+         <li style="font-size: 20px; margin-left: -25px;"> <img src="./assets/Group 275.webp" class="question-icon" style="height: 16px; margin-right: 5px;"/> Personalised support to ensure a smooth, worry-free insurance experience.</li>
+      </ul>
+    </div>
+  </div>
+
+ 
+  <!-- USFda Styles -->
+
+  <section class="features-row">
+    <div class="feature">
+      <img src="./assets/Group.webp" alt="USFDA Approved"  />
+      <p><strong>USFDA</strong><br>Approved Procedures</p>
+    </div>
+  
+    <div class="divider"></div>
+  
+    <div class="feature">
+      <img src="./assets/mostadvanced technology-01 1.webp" alt="Advanced Technology" />
+      <p><strong>Most</strong><br>Advanced Technology</p>
+    </div>
+  
+    <div class="divider"></div>
+  
+    <div class="feature">
+      <img src="./assets/insurence-01 1.webp" alt="Insurance Approved" style="margin-left: -10px; margin-right: 10px;" />
+      <p ><strong>Insurance</strong><br>Approved</p>
+    </div>
+  
+    <div class="divider"></div>
+  
+    <div class="feature">
+      <img src="./assets/minutes-01 1.webp" alt="30 Minute Cashless"  style="margin-left: 10px;  " />
+      <p><strong>30 Minutes</strong><br>Cashless Procedure</p>
+    </div>
+  </section>
+
+  <!-- Doctors Section -->
+  <section class="doctor-list" id="doctors">
+    <div class="doctor-card">
+      <img src="./assets//Mask group (3).webp" alt="Dr. Rajah V Koppala" class="doctor-img" />
+      <div class="doctor-info">
+        <h3>Dr. Rajah V Koppala</h3>
+        <p>MBBS, MD (Radiology), FRCR(UK).</p>
+        <p>Founder and Chief Vascular & Interventional Radiologist</p>
+        <p>A pioneer in advanced vascular care with over 30 years of global experience.</p>
+        <div class="btn-group">
+          <a href="tel: +91 89297 89231">
+            <button class="btn contact">Contact Clinic</button>
+          </a>
+          <button class="btn book" onclick="window.location='#contact'">Book Appointment</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="doctor-card">
+      <img src="./assets//Mask group (4).webp" alt="Dr. Hareesh Reddy" class="doctor-img" />
+      <div class="doctor-info">
+        <h3>Dr. Hareesh Reddy</h3>
+        <p>MBBS, MS, DMAS, FMAS</p>
+        <p>Renowned Varicose Veins Specialist, with expertise in laser and minimally invasive treatments.</p>
+        <div class="btn-group">
+          <a href="tel: +91 89297 89231">
+            <button class="btn contact">Contact Clinic</button>
+          </a>
+          <button class="btn book" onclick="window.location='#contact'">Book Appointment</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="doctor-card">
+      <img src="./assets//Mask group (5).webp" alt="Dr. Avinash C" class="doctor-img" />
+      <div class="doctor-info">
+        <h3>Dr. Avinash C</h3>
+        <p>MBBS, MS (General Surgery)</p>
+        <p>Experienced Vascular and Varicose Veins Surgeon, known for his precision and patient-centred approach.</p>
+        <div class="btn-group">
+          <a href="tel:+91 89297 89231">
+            <button class="btn contact">Contact Clinic</button>
+          </a>
+          <button class="btn book" onclick="window.location='#contact'">Book Appointment</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--<section class="comparison-section">-->
+  <!--  <h2 class="comparison-heading">-->
+  <!--    Why Prefer <span class="blue-text">Avis Hospitals</span> Compared to Others?-->
+  <!--  </h2>-->
+  
+  <!--  <table class="comparison-table">-->
+  <!--    <thead>-->
+  <!--      <tr>-->
+  <!--        <th>Features</th>-->
+  <!--        <th>Avis Hospitals</th>-->
+  <!--        <th>Other Vein Centers</th>-->
+  <!--      </tr>-->
+  <!--    </thead>-->
+  <!--    <tbody>-->
+  <!--      <tr>-->
+  <!--        <td>Widespread Network</td>-->
+  <!--        <td>More than 25 specialised centres across India dedicated to vein care - largest focused network.</td>-->
+  <!--        <td>Single or few locations, rarely dedicated to vein care.</td>-->
+  <!--      </tr>-->
+  <!--      <tr class="highlight-row">-->
+  <!--        <td>Advanced CLACS</td>-->
+  <!--        <td>India’s first with CLACS (Cryo-Laser & Cryo-Sclerotherapy); painless, </td>-->
+  <!--        <td>Very few offer CLACS, rely on older surgical methods with longer recovery and more </td>-->
+  <!--      </tr>-->
+  <!--      <tr>-->
+  <!--        <td>Surgical Expertise</td>-->
+  <!--        <td>450+ successful surgeries; high case volume and standardised endovenous/laser protocols.</td>-->
+  <!--        <td>Occasional cases, lower volumes and inconsistent protocols.</td>-->
+  <!--      </tr>-->
+  <!--      <tr class="highlight-row">-->
+  <!--        <td>Comprehensive Screening</td>-->
+  <!--        <td>Free Colour Doppler Scan (₹4,500) included at initial evaluation for complete diagnosis.</td>-->
+  <!--        <td>Often charged separately, sometimes only a basic physical assessment.</td>-->
+  <!--      </tr>-->
+  <!--      <tr>-->
+  <!--        <td>Technology & Equipment</td>-->
+  <!--        <td>Imported, cutting-edge lasers & diagnostics; internationally benchmarked set-ups.</td>-->
+  <!--        <td>Mixed/legacy equipment, variable quality across centres.</td>-->
+  <!--      </tr>-->
+  <!--        <tr>-->
+  <!--        <td>Price / Value Assurance</td>-->
+  <!--        <td>Transparent written estimates; no hidden or last-minute charges.</td>-->
+  <!--        <td>Prices may change mid-treatment, add-ons at discharge are common.</td>-->
+  <!--      </tr>-->
+  <!--      <tr>-->
+  <!--        <td>Affordability & Insurance</td>-->
+  <!--        <td>EMI & cashless insurance options; fair, structured pricing.</td>-->
+  <!--        <td>Headline prices exclude anaesthesia/consumables/follow-ups.</td>-->
+  <!--      </tr>-->
+  <!--        <tr>-->
+  <!--        <td>Personalised Care Pathway</td>-->
+  <!--        <td>End-to-end: specialist consult → scan → laser care → structured follow-ups & recovery programmes.</td>-->
+  <!--        <td>Fragmented care, limited or unstructured follow-ups.</td>-->
+  <!--      </tr>-->
+  <!--      <tr>-->
+  <!--        <td>Recovery & Comfort</td>-->
+  <!--        <td>Day-care, stitch-free procedures; fast return to routine; comfort-first environment.</td>-->
+  <!--        <td>Longer downtime, more discomfort with conventional surgery.</td>-->
+  <!--      </tr>-->
+  <!--        <tr>-->
+  <!--        <td>Safety & Protocols</td>-->
+  <!--        <td>Internationally benchmarked protocols; audited outcomes and infection control.</td>-->
+  <!--        <td>Limited standardisation across centres.</td>-->
+  <!--      </tr>-->
+  <!--    </tbody>-->
+  <!--  </table>-->
+  <!--</section>-->
+  <section class="comparison-section">
+    <h2 class="comparison-heading">
+      Why Prefer <span class="blue-text">Avis Hospitals</span> Compared to Others?
+    </h2>
+  
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Features</th>
+          <th>Avis Hospitals</th>
+          <th>Other Vein Centers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Widespread Network</td>
+          <td>More than 25 specialised centres across India dedicated to vein care - largest focused network.</td>
+          <td>Single or few locations, rarely dedicated to vein care.</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>Advanced CLACS Treatment</td>
+          <td>India’s first with CLACS (Cryo-Laser & Cryo-Sclerotherapy); painless, minimally invasive; select centres with imported systems.</td>
+          <td>Very few offer CLACS, rely on older surgical methods with longer recovery and more discomfort.</td>
+        </tr>
+        <tr>
+          <td>Surgical Expertise</td>
+          <td>450+ successful surgeries; high case volume and standardised endovenous/laser protocols.</td>
+          <td>Occasional cases, lower volumes and inconsistent protocols.</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>Comprehensive Screening</td>
+          <td>Free Colour Doppler Scan (₹4,500) included at initial evaluation for complete diagnosis.</td>
+          <td>Often charged separately, sometimes only a basic physical assessment.</td>
+        </tr>
+        <tr>
+          <td>Technology & Equipment</td>
+          <td>Imported, cutting-edge lasers & diagnostics; internationally benchmarked set-ups.</td>
+          <td>Mixed/legacy equipment, variable quality across centres.</td>
+        </tr>
+          <tr>
+          <td>Price / Value Assurance</td>
+          <td>Transparent written estimates; no hidden or last-minute charges.</td>
+          <td>Prices may change mid-treatment, add-ons at discharge are common.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
+
+   <section class="vein-section">
+    <div class="vein-container">
+      <div class="vein-images">
+        <div class="vein-img-box">
+          <img src="./assets/varicose-veins-before 1.webp" alt="Before Treatment">
+        </div>
+     
+      </div>
+      <div class="vein-description">
+        <h2>
+          What is <span class="highlight">Varicose Veins?</span>
+        </h2>
+        <p style="font-size:16px">
+         Varicose veins are twisted, swollen veins in the legs, located just beneath the skin. They may appear brownish, blue, or purple in colour. If the valves are weak or damaged, blood can pool up and increase pressure in the veins. This excess pressure causes the veins to widen and expand, leading them to form varicose veins. They are more common in the legs because standing and walking increases pressure in the lower body veins; as for women, older adults and people with a genetic history are at a higher risk of suffering from varicose veins.
+        </p>
+        
+      </div>
+    </div>
+  </section> 
+
+  <section class="info-section">
+    <div class="info-container">
+      <div class="info-box">
+        <h2 style="color: #037BBB;">Common Symptoms</h2>
+        <ul>
+          <li  style="font-size: 20px;"> <img src="./assets/Group 282.webp" class="question-icon" style="height: 16px; margin-right: 5px; margin-left: -30px;"/>Visible blue, red, or purple veins on the legs</li>
+          <li  style="font-size: 20px;"> <img src="./assets/Group 282.webp" class="question-icon"style="height: 16px; margin-right: 5px; margin-left: -30px;" />Pain or cramps after standing or sitting too long.</li>
+          <li  style="font-size: 20px;"> <img src="./assets/Group 282.webp" class="question-icon" style="height: 16px; margin-right: 5px; margin-left: -30px;"/>Heaviness, burning, or swelling in the legs</li>
+          <li  style="font-size: 20px;"> <img src="./assets/Group 282.webp" class="question-icon" style="height: 16px; margin-right: 5px; margin-left: -30px;"/>Skin changes, radiating pain, or occasional bleeding</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h2 style="color: #037BBB;">Minimally Invasive Treatments</h2>
+        <ul>
+          <li style="font-size: 20px;">  <img src="./assets/Group 282.webp" class="question-icon" style="height: 16px; margin-right: 5px; margin-left: -30px;" />Endovenous Laser Treatment (EVLT)</li>
+          <li style="font-size: 20px;">  <img src="./assets/Group 282.webp" class="question-icon" style="height: 16px; margin-right: 5px; margin-left: -30px;" />Radiofrequency Ablation (RFA)</li>
+          <li style="font-size: 20px;">  <img src="./assets/Group 282.webp" class="question-icon" style="height: 16px; margin-right: 5px; margin-left: -30px;"/>Sclerotherapy and CLaCs for smaller veins.</li>
+          <li style="font-size: 20px;">  <img src="./assets/Group 282.webp" class="question-icon" style="height: 16px; margin-right: 5px; margin-left: -30px;" />VenaSeal (Medical Superglue Treatment)</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h2 style="color: #037BBB;">Cost of Treatments Depends</h2>
+        <ul>
+          <li style="font-size: 20px;">  <img src="./assets/Group 282.webp" class="question-icon" style="height: 16px; margin-right: 5px; margin-left: -30px;" />Type of procedure recommended</li>
+          <li style="font-size: 20px;">  <img src="./assets/Group 282.webp" class="question-icon" style="height: 16px; margin-right: 5px; margin-left: -30px;" />Overall health condition of the patient</li>
+          <li style="font-size: 20px;">  <img src="./assets/Group 282.webp" class="question-icon" style="height: 16px; margin-right: 5px; margin-left: -30px;"/>Technology & equipment used.</li>
+          <li style="font-size: 20px;">  <img src="./assets/Group 282.webp" class="question-icon" style="height: 16px; margin-right: 5px; margin-left: -30px;" />Duration and stage of treatment plan</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Review section -->
+  
+  <!--<section class="video-section">-->
+  <!--  <h2><span class="blue-text">What is</span> <span class="red-text">Varicose Veins?</span></h2>-->
+  <!--  <div class="video-card">-->
+  <!--    <iframe width="760" height="415" src="https://www.youtube.com/embed/-zDVb7nHoHI?si=oTTfOEL_qrLEXtFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+      
+  <!--  </div>-->
+  <!--</section>-->
+  
+   <section class="reviews-section" id="testimonials">
+        <!-- Google Rating -->
+        <div class="google-rating">
+            <img src="./assets/google.webp" alt="Google">
+            <span>Google Rating</span>
+            <span class="score">4.8 ★★★★☆</span>
+        </div>
+
+        <!-- Reviews -->
+        <div class="reviews-grid">
+            <!-- Card 1 -->
+            <div class="review-card">
+                <img src="./assets/person2.webp" alt="Mr.Dasari Rangaiah">
+                <h3>Mr.Dasari Rangaiah</h3>
+                <p>
+                    Dr. Rajah performed my varicose vein surgery on both legs. Excellent care from the team — truly one of the best hospitals in Hyderabad
+                </p>
+                <div class="review-footer">
+                    <div style="display: flex; flex-direction: row;">
+                        <img src="./assets/google.webp" alt="Google" style="margin-top: 15px;"> 
+                        <div style="margin-left: 30px;">
+                            <p>Posted on </p>
+                            <p>Google</p>
+                        </div>
+
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="review-card">
+                <img src="./assets/person1.webp" alt="Mrs.Anuradha Rao">
+                <h3>Mrs. Anuradha Rao</h3>
+                <p>
+                    The hospital is clean, staff are polite, and Dr. Rajah V. Koppala is outstanding. I strongly recommend Avis for vein treatment
+                </p>
+                <div class="review-footer">
+                    <div style="display: flex; flex-direction: row;">
+                        <img src="./assets/google.webp" alt="Google" style="margin-top: 15px;"> 
+                        <div style="margin-left: 30px;">
+                            <p>Posted on </p>
+                            <p>Google</p>
+                        </div>
+
+                    </div>
+                    <div class="stars">★★★★☆</div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="review-card">
+                <img src="./assets/person3.webp" alt="Mrs.Geetha">
+                <h3>Mrs. Geetha</h3>
+                <p>
+                    My father’s varicose veins were treated here successfully. The procedure was smooth and recovery was quick.
+                </p>
+                <div class="review-footer">
+                    <div style="display: flex; flex-direction: row;">
+                        <img src="./assets/google.webp" alt="Google" style="margin-top: 15px;">
+                        <div style="margin-left: 30px;">
+                            <p>Posted on </p>
+                            <p>Google</p>
+                        </div>
+
+                    </div>
+                   <div class="stars">★★★★☆</div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+  <!-- faq section -->
+ 
+  <section class="faq-section" id="faq">
+    <h2><span class="blue-text">Frequently</span> <span class="red-text">Asked Questions</span></h2>
+  
+    <div class="faq-item">
+      <div class="faq-question">
+        <p>What causes varicose veins?
+</p>
+        <span class="plus">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Varicose veins occur when the valves in your veins weaken or get damaged, causing blood to pool and veins to swell.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question">
+        <p>What are the symptoms of varicose veins?</p>
+        <span class="plus">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Visible bulging veins, leg pain, heaviness, swelling, cramps, burning sensation, and skin discoloration.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question">
+        <p>Are varicose veins dangerous?</p>
+        <span class="plus">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Most are not life-threatening, but if untreated, they may lead to ulcers, bleeding, or blood clots.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <p>How are varicose veins treated?</p>
+        <span class="plus">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Modern options include Endovenous Laser Treatment (EVLT), Radiofrequency Ablation (RFA), VenaSeal, sclerotherapy, and other minimally invasive procedures.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <p>What is the latest and most advanced treatment for varicose veins?</p>
+        <span class="plus">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>EVLT, RFA, and VenaSeal™ are considered the most advanced, minimally invasive procedures with fast recovery and no major scarring.</p>
+      </div>
+    </div>
+      <div class="faq-item">
+      <div class="faq-question">
+        <p> Is laser treatment better than traditional surgery?</p>
+        <span class="plus">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes. Laser treatment is safer, less painful, scar-free, and allows patients to return to normal activities within 1–2 days compared to surgery.</p>
+      </div>
+    </div>
+     <div class="faq-item">
+      <div class="faq-question">
+        <p>Is varicose vein treatment painful?</p>
+        <span class="plus">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>No. Advanced treatments like Laser, RFA, and VenaSeal™ are nearly painless, done under local anesthesia, and require no overnight hospital stay.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <p>How long does recovery take after advanced treatment?</p>
+        <span class="plus">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Most patients can walk immediately and return to daily activities within 1–2 days.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- conatact sec -->
+  <div class="help-section">
+    <h2>Need Help?</h2>
+    <div class="help-buttons">
+      <a href="#contact" class="btn-blue">Book Your Appointment Now</a>
+      <a href="tel: +91 89297 89231" class="btn-red">Call Now</a>
+    </div>
+  </div>
+
+ 
+  
+  <div class="footer-bar">
+    <div>© 2025 Avis Vascular Centre. All Rights Reserved.</div>
+    <div class="footer-links">
+      <a href="#">Privacy policy</a> |
+      <a href="#">Disclaimer</a> |
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="sticky-footer">
+    <a href="#contact">
+      <button class="btn-blue" style="border-radius: 5px;" >Book Consultation</button>
+    </a>
+    <a href="tel:  +91 89297 89231">
+      <button class="btn-orange" style="border-radius: 5px;">Call Us</button>
+    </a>
+  </div>
+  
+  
+
+<!-- Counter Functionality -->
+  <script>
+    const counters = document.querySelectorAll('.stat-number');
+  
+    const animateCounter = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const isDecimal = counter.getAttribute('data-target').includes('.');
+      let count = 0;
+      const increment = target / 200;
+  
+      const updateCount = () => {
+        count += increment;
+        if (count < target) {
+          counter.textContent = isDecimal ? count.toFixed(1) : Math.ceil(count);
+          requestAnimationFrame(updateCount);
+        } else {
+          counter.textContent = isDecimal ? target.toFixed(1) : target;
+          if (counter.textContent == "98") counter.textContent += "%";
+          if (counter.textContent == "40000") counter.textContent = "40K+";
+          if (counter.textContent == "29") counter.textContent += "+";
+        }
+      };
+  
+      updateCount();
+    };
+  
+    const options = {
+      threshold: 0.5,
+    };
+  
+    const observer = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+  
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  </script>
+
+  <!-- faq toggle functionality -->
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        parent.classList.toggle('active');
+      });
+    });
+  </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("bookingForms");
+  const btn  = form.querySelector(".btn-blue");
+  const iframe = document.getElementById("hiddenIframe");
+
+  form.addEventListener("submit", function (e) {
+    const name  = form.querySelector("[name='entry.587114754']").value.trim();
+    const phone = form.querySelector("[name='entry.541294711']").value.trim();
+
+    if (name === "" || phone === "") {
+      e.preventDefault();
+      alert("Please enter your name and mobile number.");
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Submitting...";
+    form.submit();
+
+    iframe.onload = function () {
+      setTimeout(() => {
+        window.location.href = "thank-you.html";
+      }, 800);
+    };
+  });
+});
+</script>
+
+<!-- ✅ Auto-capture UTM parameters & page URL -->
+<script>
+function getAllUrlParams() {
+  const params = {};
+  const query = window.location.search.substring(1).split("&");
+  query.forEach(pair => {
+    if (!pair) return;
+    const [k,v] = pair.split("=");
+    params[decodeURIComponent(k.toLowerCase())] = decodeURIComponent(v || "");
+  });
+  return params;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const params = getAllUrlParams();
+  const map = {
+    utm_campaign: "utm_campaign",
+    utm_source: "utm_source",
+    utm_medium: "campaign_type",
+    utm_term: "utm_term",
+    utm_content: "creative",
+    utm_adgroup: "utm_adgroup",
+    matchtype: "matchtype",
+    keyword: "keyword",
+    device: "device",
+    gclid: "gclid",
+    placement: "placement",
+    target: "target"
+  };
+
+  
+
+  Object.entries(map).forEach(([p,id]) => {
+    if (params[p]) {
+      const el = document.getElementById(id);
+      if (el) el.value = params[p];
+    }
+  });
+
+  const link = document.getElementById("utm_link");
+  if (link) link.value = window.location.href;
+});
+</script>
+  
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggler = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('siteNav');
+
+  const setOpen = (open) => {
+    toggler.setAttribute('aria-expanded', String(open));
+    toggler.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    nav.dataset.open = String(open);
+    document.body.classList.toggle('no-scroll', open);
+  };
+
+  toggler.addEventListener('click', () => {
+    const open = toggler.getAttribute('aria-expanded') === 'true';
+    setOpen(!open);
+  });
+
+  // Close on link tap (mobile) and on ESC
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    if (window.matchMedia('(max-width: 900px)').matches) setOpen(false);
+  }));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+});
+</script>
+
+  
+ 
+
+</body>
+</html>
